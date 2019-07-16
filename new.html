@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html id="new">
+    <head>
+            <meta charset="UTF-8">
+            <link rel="stylesheet" href="main.css" />
+            <title>Spectrooms</title>
+            <style>
+                    @import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+            </style>
+            <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+            <link rel="icon" href="photo/logo_offic.jpg" />
+            <script type="text/javascript" src="calculation.js"></script>
+    </head>
+
+    <body>
+
+            <header class="spectroom-header">
+                    <h1> SPECTROOMS </h1>
+                    <nav>
+                        <ul>
+                            <li><a href="spectroom.html">Ескейп стаи</a></li>
+                            <li><a href="rules.html">Правила</a></li>
+                            <li><a href="gallery.html">Галерия</a></li>
+                            <li><a href="new.html">Reservarion</a></li>
+                            <li>
+                                    <div class="dropdown">
+                                            <button class="dropbtn"> Контакти</button>
+                                            <div class="dropdown-content">
+                                            <a href="contacts.html#room66">Room 66</a>
+                                            <a href="contact_room662.html">Room 66 II</a>    
+                                            <a href="contact_It.html">IT</a>
+                                            </div>
+                                        </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+            
+             <div id="wrap">
+                <form action="" id="reservationform" onsubmit="return false;">
+                <div>
+                    <div class="cont_order">
+                       <fieldset>
+                        <legend>Make your reservation!</legend>
+                        <label>Difficulty of the room</label>
+                        <label class='radiolabel'><input type="radio"  name="selectedroom" value="Room661" onclick="calculateTotal()" />Room 66 - 2 people ($20)</label><br/>
+                        <label class='radiolabel'><input type="radio"  name="selectedroom" value="Room662" onclick="calculateTotal()" />Room 66 - 3 people ($25)</label><br/>
+                        <label class='radiolabel'><input type="radio"  name="selectedroom" value="Room663" onclick="calculateTotal()" />Room 66 - 4 people($35)</label><br/>
+                        <label class='radiolabel'><input type="radio"  name="selectedroom" value="Room664" onclick="calculateTotal()" />Room 66 - 5 people($75)</label><br/>
+                        <br/>
+                        <label >Filling</label>
+                 
+                        <select id="filling" name='filling' onchange="calculateTotal()">
+                        <option value="None">Select Filling</option>
+                        <option value="One actor">One actor($10)</option>
+                        <option value="Two actor">Two actor($15)</option>
+                        </select>
+                        <br/>
+                        <p>
+                        <label for='includehorror' class="inlinelabel">Include Extra horror($5)</label>
+                       <input type="checkbox" id="includehorror" name='includehorror' onclick="calculateTotal()" />
+                       </p>
+                       
+                        <div id="totalPrice"></div>
+                        
+                        </fieldset>
+                    </div>
+                    <input type='submit' id='submit' value='Submit' onclick="calculateTotal()" />
+                </div>  
+               </form>
+            </div>
+    </body>
+</html>
